@@ -1,4 +1,4 @@
-from stack.Queue import MyQueue
+from stack.MyQueue import MyQueue
 
 
 def find_bin(n):
