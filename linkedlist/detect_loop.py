@@ -1,4 +1,4 @@
-from LinkedList import LinkedList
+from linkedlist import LinkedList
 
 
 def detect_loop(lst:LinkedList):
