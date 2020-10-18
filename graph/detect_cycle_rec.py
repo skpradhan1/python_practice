@@ -39,8 +39,9 @@ def detect_cycle_rec(g, node, visited, rec_node_stack):
     return False
 
 
-g1 = Graph(2)
+g1 = Graph(4)
 g1.add_edge(0, 1)
-g1.add_edge(1, 2)
+g1.add_edge(0, 2)
+g1.add_edge(2, 3)
 
 print(detect_cycle(g1))
