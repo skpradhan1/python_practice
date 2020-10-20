@@ -47,3 +47,39 @@ class Node:
                 return False
         else:
             return True
+
+    def delete(self,val):
+        if val < self.val:
+            if self.leftChild:
+                self.leftChild = self.leftChild.delete(val)
+            else:
+                print(str(val) + " not found in the tree")
+                return None
+        elif val > self.val:
+            if self.rightChild:
+                self.rightChild = self.rightChild.delete(val)
+            else:
+                print(str(val) + " not found in the tree")
+                return None
+        else:
+            if self.leftChild is None and self.rightChild is None:
+                self = None
+                return None
+            elif self.leftChild is None:
+                tmp = self.rightChild
+                self = None
+                return tmp
+            elif self.rightChild is None:
+                tmp = self.leftChild
+                self = None
+                return tmp
+            else:
+                current = self.rightChild
+                while current.leftChild is not None:
+                    current = current.leftChild
+
+                self.val = current.val
+                self.rightChild = self.rightChild.delete(current.val)
+
+        return self
+

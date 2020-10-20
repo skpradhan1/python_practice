@@ -22,3 +22,7 @@ class BinarySearchTree:
             return self.root.search(val)
         else:
             return False
+
+    def delete(self,val):
+        if self.root:
+            return self.root.delete(val)
